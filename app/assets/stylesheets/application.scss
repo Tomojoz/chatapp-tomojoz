@@ -1,0 +1,19 @@
+@import 'variables'
+ 
+html {
+    
+}
+
+body {
+    background-color: $base-bg-color;
+    color: $text-base-color;
+    font-family: Avenir;
+    font-style: normal;
+    font-weight: normal;
+    font-size: $font-lg;
+    line-height: 25px;
+}
+
+.float_btn {
+    background-color: $primary-color;
+}
