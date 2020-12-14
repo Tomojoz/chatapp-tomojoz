@@ -8,8 +8,8 @@
   .field
     = f.label :password
     - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
+      -# %em
+      -#   (#{@minimum_password_length} characters minimum)
     %br/
     = f.password_field :password, autocomplete: "new-password"
   .field
@@ -17,5 +17,5 @@
     %br/
     = f.password_field :password_confirmation, autocomplete: "new-password"
   .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+    = f.submit "Submit"
+-# = render "devise/shared/links"
