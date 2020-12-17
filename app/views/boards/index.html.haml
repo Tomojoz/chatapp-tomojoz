@@ -1,0 +1,18 @@
+.container
+    %h2 All Boards
+    - @boards.each do |board|
+        .board
+            .card
+                .card_top
+                    .card_title
+                        = board.title
+                    .card_edit
+                    = image_tag '3dots.svg'
+                .card_description
+                    = board.description
+                .card_creater
+                    = image_tag board.user.avatar_image
+    .board-add
+        %p + Add new board
+
+            
