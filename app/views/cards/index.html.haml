@@ -1,0 +1,22 @@
+.container
+    %h2 Brackets
+    - @cards.each do |card|
+        .board
+            .frame
+                .frame_top
+                    .frame_title
+                        = card.title
+                    .card_edit
+                        .dropdown
+                            = image_tag '3dots.svg', class: 'dropbtn'
+                        .dropdown-content
+                            = link_to 'Edit', edit_board_card_path(card)
+                            = link_to 'Delete', board_card_path(card), class: 'delete', data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+                .frame_description
+                    = card.description
+                .frame_creater
+                    = image_tag card.user.avatar_image
+    .board-add
+        = link_to new_board_card_path do
+            %p + Add new board
+           
