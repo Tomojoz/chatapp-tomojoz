@@ -6,8 +6,13 @@
                 .card_top
                     .card_title
                         = board.title
-                    .card_edit
-                    = image_tag '3dots.svg'
+                    - if user_signed_in? && current_user.has_written(board)
+                        .card_edit
+                            .dropdown
+                                = image_tag '3dots.svg', class: 'dropbtn'
+                            .dropdown-content
+                                = link_to 'Edit', edit_board_path(board)
+                                = link_to 'Delete', board_path(board), class: 'delete', data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
                 .card_description
                     = board.description
                 .card_creater

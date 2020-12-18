@@ -20,5 +20,9 @@ class User < ApplicationRecord
       'avatar-john.png'
     end
   end
-  
+
+  def has_written(board)
+    boards.exists?(id: board.id)
+  end
+
 end

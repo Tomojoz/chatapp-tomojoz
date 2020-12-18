@@ -4,7 +4,7 @@ class ProfilesController < ApplicationController
         @profile = current_user.profile
     end
 
-    def edit 
+    def edit
         @profile = current_user.prepare_profile
     end
 
@@ -31,4 +31,3 @@ class ProfilesController < ApplicationController
         )
     end
 end
-

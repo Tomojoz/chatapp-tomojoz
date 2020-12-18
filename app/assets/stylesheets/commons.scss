@@ -1,0 +1,42 @@
+@import './variables';
+ 
+  .dropbtn {
+    border: none;
+  }
+
+  .card_edit {
+      position: relative;
+  }
+
+  .dropdown {
+    display: inline-block;
+
+    // &:hover + .dropdown-content{
+    //     display: block;
+    // }
+  }
+  
+  .dropdown-content {
+    font-weight: normal;
+    width: 66px;
+    // display: none;
+    position: absolute;
+    left: -33px;
+    background-color: white;
+    border-radius: 10px;
+
+    .delete {
+        padding-bottom: 13px;
+    }
+  }
+  
+  .dropdown-content a {
+    padding-top: 10px;
+    padding-left: 14px;
+    text-decoration: none;
+    display: block;
+    color: $text-base-color;
+    font-family: $font-pop;
+    font-size: 12px;
+  }
+  
