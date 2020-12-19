@@ -6,11 +6,13 @@ class CardsController < ApplicationController
     end
 
     def new
-        @card = current_user.cards.build
+        @board = Board.new
+        @card = @board.cards.build
     end
 
     def create
-        @card = current_user.cards.build(card_params)
+        @board = Board.new
+        @card = @board.cards.build(card_params)
         if @card.save
             redirect_to board_cards_path(@card), notice: '保存しました'
         else
@@ -31,5 +33,12 @@ class CardsController < ApplicationController
             flash.now[:error] = '更新できませんでした'
             render :edit
         end
+    end
+
+    private
+    def card_params
+
+        params.require(:card).permit(:title, :description)
+
     end
 end
