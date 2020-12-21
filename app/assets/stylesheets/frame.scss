@@ -1,33 +1,33 @@
 @import 'variables';
 
-.card {
+.frame {
     background-color: #F4F4F4;
     border-radius: 10px;
     padding: 32px 16px 20px 17px;
 
-    .card_top {
+    .frame_top {
         display: flex;
         justify-content: space-between;
 
-        .card_title {
+        .frame_title {
             font-family: $font-pop;
             font-size: $font-lg;
             color: $text-base-color;
         }
     
-        .card_edit {
+        .frame_edit {
             width: 24px;
             height: 6px;
         }
     }
 
-    .card_description { 
+    .frame_description { 
         color: rgb(138, 138, 138);
         font-size: 14px;
         padding-top: 6px;
     }
 
-    .card_creater {
+    .frame_creater {
 
         img {
             width: 30px;
