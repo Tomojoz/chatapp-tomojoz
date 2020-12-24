@@ -3,7 +3,7 @@
     - @boards.each do |board|
         .board
             .frame
-                = link_to new_task_path(board) do
+                = link_to board_path (board) do
                     .frame_top
                         .frame_title
                             = board.title
