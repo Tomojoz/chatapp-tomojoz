@@ -1,7 +1,21 @@
 .container
-    .frame_top
-        .frame_title
+    .top_task
+        .task_title
             = @task.title
-    .frame_description
-        = @task.description
-    %h2 Comment
+        .task_edit
+            = image_tag '3dots.svg', class: 'dropbtn'
+    .task_deadline
+        = @task.deadline
+    - if @task.eyecatch.attached?
+        .task_image
+            = image_tag @task.eyecatch
+    .task_description
+        %p= @task.description
+    %h2.comment_header Comment
+    .comment_row
+        .comment_creater
+            = image_tag 'avatar-merecy.png'
+        .comment_content
+            %p when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing 
+    .board-add
+        %p + Add new comment

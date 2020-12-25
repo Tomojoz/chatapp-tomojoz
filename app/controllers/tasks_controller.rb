@@ -2,7 +2,8 @@ class TasksController < ApplicationController
     before_action :authenticate_user!
 
     def show
-        @task = Task.find(params[:id])
+        @board = Board.find(params[:board_id])
+        @task = @board.tasks.find(params[:id])
     end
 
     def new
@@ -23,6 +24,6 @@ class TasksController < ApplicationController
 
     private
     def tasks_params
-        params.require(:task).permit(:title, :description, :deadline)
+        params.require(:task).permit(:title, :description, :deadline, :eyecatch)
     end
 end
