@@ -1,0 +1,19 @@
+.container
+    %h2 Brackets
+    - @tasks.each do |task|
+        .board
+            .frame
+                = link_to board_task_path(@board, task) do
+                    - if task.eyecatch.attached?
+                        .frame_image
+                            = image_tag task.eyecatch
+                    .frame_top
+                        .frame_title
+                            = task.title
+                .frame_description
+                    = task.description
+                .frame_creater
+                    = image_tag task.user.avatar_image
+    .board-add
+        = link_to new_board_task_path(@board) do
+            %p + Add new card

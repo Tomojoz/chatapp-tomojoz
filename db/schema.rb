@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_18_210719) do
+ActiveRecord::Schema.define(version: 2020_12_23_060903) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,17 +45,6 @@ ActiveRecord::Schema.define(version: 2020_12_18_210719) do
     t.index ["user_id"], name: "index_boards_on_user_id"
   end
 
-  create_table "cards", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "board_id", null: false
-    t.string "title"
-    t.text "description"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["board_id"], name: "index_cards_on_board_id"
-    t.index ["user_id"], name: "index_cards_on_user_id"
-  end
-
   create_table "profiles", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "nickname"
@@ -66,6 +55,18 @@ ActiveRecord::Schema.define(version: 2020_12_18_210719) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "board_id", null: false
+    t.string "title", null: false
+    t.text "description", null: false
+    t.datetime "deadline", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["board_id"], name: "index_tasks_on_board_id"
+    t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

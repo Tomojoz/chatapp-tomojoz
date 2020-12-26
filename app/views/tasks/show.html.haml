@@ -1,0 +1,31 @@
+.container
+    .top_task
+        .task_title
+            = @task.title
+        .task_detail_actions 
+            .task_edit
+                = image_tag '3dots.svg', class: 'dropbtn'
+                .task_edit_content
+                    = link_to 'Edit', edit_board_task_path(@board, @task)
+                    = link_to 'Dlete', board_task_path(@board, @task), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+        -# .article_detail_actions
+        -#     .dropdown
+        -#     = image_tag 'actions.svg', class: 'dropbtn'
+        -#     .dropdown-content.mini
+        -#         = link_to '編集する', edit_article_path(@article)
+        -#         = link_to '削除する', article_path(@article), data: { method: 'delete', confirm: '本当に削除してもよろしいですか？' }
+    .task_deadline
+        = @task.deadline
+    - if @task.eyecatch.attached?
+        .task_image
+            = image_tag @task.eyecatch
+    .task_description
+        %p= @task.description
+    %h2.comment_header Comment
+    .comment_row
+        .comment_creater
+            = image_tag 'avatar-merecy.png'
+        .comment_content
+            %p when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing 
+    .board-add
+        %p + Add new comment

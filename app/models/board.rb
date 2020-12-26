@@ -1,4 +1,4 @@
 class Board < ApplicationRecord
     belongs_to :user
-    has_many :cards, dependent: :destroy
+    has_many :tasks, dependent: :destroy
 end
