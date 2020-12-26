@@ -10,10 +10,41 @@
     }
 
     .task_edit {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        position: relative;
+        display: inline-block;
     }
+
+    .task_edit_content {
+        font-weight: normal;
+        display: none;
+        right: 0;
+        position: absolute;
+        background-color: white;
+        z-index: 1;
+        font-family: avenir;
+        border: 1px solid #F4F4F4;
+        border-radius: 10px;
+        padding: 12px 19px 11px 12px;
+    }
+
+    .task_edit_content :first-child {
+        padding-bottom: 12px;
+    }
+}   
+
+
+.task_edit_content a {
+    text-decoration: none;
+    display: block;
+    color: black;
+}
+
+.task_edit_content a:hover {
+    color: rgb(230, 213, 188);
+}
+
+.task_edit:hover .task_edit_content {
+    display: block;
 }
 
 .task_deadline {
