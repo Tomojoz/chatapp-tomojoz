@@ -2,7 +2,7 @@
   %ul
     - @task.errors.full_messages.each do |message|
       %li= message
-  = form_with model: [@board, @task] do |f|
+   = form_with(model: @task, local: true, url: board_tasks_path) do |f|
     %h2 New Card
     %div
       = f.label :eyecatch, 'アイキャッチ'
