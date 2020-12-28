@@ -1,0 +1,16 @@
+{
+    "name": "chat app",
+    "description": "This is chatapp",
+    "keywords": [],
+    "website": "",
+    "repository": "https://github.com/Tomojoz/chatapp-tomojoz",
+    "env": {},
+    "addons": [
+      "heroku-postgresql:hobby-dev"
+    ],
+    "buildpacks": [{
+      "url": "heroku/nodejs"
+    }, {
+      "url": "heroku/ruby"
+    }]
+  }
