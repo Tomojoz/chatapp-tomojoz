@@ -45,6 +45,17 @@ ActiveRecord::Schema.define(version: 2020_12_26_003228) do
     t.index ["user_id"], name: "index_boards_on_user_id"
   end
 
+  create_table "cards", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "board_id", null: false
+    t.string "title"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["board_id"], name: "index_cards_on_board_id"
+    t.index ["user_id"], name: "index_cards_on_user_id"
+  end
+
   create_table "comments", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "task_id", null: false
